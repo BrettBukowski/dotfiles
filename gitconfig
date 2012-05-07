@@ -1,0 +1,36 @@
+[user]
+        name = Brett Bukowski
+        email = brett.bukowski@gmail.com
+[color]
+        ui = auto
+[color "diff"]
+    meta = yellow
+        frag = cyan
+        old = red
+        new = green
+[help]
+        autocorrect = 1
+[alias]
+        last = log -1 HEAD
+        unstage = reset HEAD --
+        c = commit
+        cm = commit -m
+        cma = commit -a -m
+        ca = commit --amend
+        caa = commit -a --amend -C HEAD
+        co = checkout
+        br = branch
+        st = status
+        pulldown = pull --upload-pack /nfs/local/linux/git/current/bin/git-upload-pack
+        killbranch = branch -d
+        #log log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"
+        #l = log --graph --pretty=format:'%C(yellow)%h%Creset %s %Creset %C(yellow)%d%Creset %Cgreen%an, (%cr)%Creset' --abbrev-commit$
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        ls = ls-files
+        unstash = stash pop
+[gc]
+        auto = 1
+[core]
+        trustctime = false
