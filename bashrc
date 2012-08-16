@@ -12,6 +12,9 @@ PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
 . ~/bin/z.sh
 
 # Shell Functions
+lock() {
+  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+}
 calc() {
   awk "BEGIN{ print $* }" ;
 }
