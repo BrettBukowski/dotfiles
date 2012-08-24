@@ -20,19 +20,19 @@ mkcd() {
   cd $1
 }
 cs(){
-  grep "$1" --color=auto `find -type f -name "*" ! -name "*.test*" ! -name "*.#*" ! -name "*.*~" ! -name "*.bak" -print`
+  grep "$1" --color=auto `find . -type f -name "*" ! -name "*.test*" ! -name "*.#*" ! -name "*.*~" ! -name "*.bak" -print`
 }
 s() {
-  grep -i "$1" --color=auto `find -type f -name "*" ! -name "*.test*" ! -name "*.#*" ! -name "*.*~" ! -name "*.bak" -print`
+  grep -i "$1" --color=auto `find . -type f -name "*" ! -name "*.test*" ! -name "*.#*" ! -name "*.*~" ! -name "*.bak" -print`
 }
 fs() {
-  grep -i "$1" --color=auto `find -name "*.$2" ! -name "*.test*" ! -name "*.#*" ! -name "*.bak" ! -name "*.*~" -print`
+  grep -i "$1" --color=auto `find . -name "*.$2" ! -name "*.test*" ! -name "*.#*" ! -name "*.bak" ! -name "*.*~" -print`
 }
 fn() {
-  grep -i "$1" --color=auto `find -name "$2" ! -name "*.test*" ! -name "*.#*" ! -name "*.bak" ! -name "*.*~" -print`
+  grep -i "$1" --color=auto `find . -name "$2" ! -name "*.test*" ! -name "*.#*" ! -name "*.bak" ! -name "*.*~" -print`
 }
 f() {
-  find -name "*" -print | xargs -0 -l1 -i grep -i {} "$1"
+  find . -name "*" -print | xargs -0 -l1 -i grep -i {} "$1"
 }
 
 # Aliases
