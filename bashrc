@@ -12,17 +12,8 @@ PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
 . ~/bin/z.sh
 
 # Shell Functions
-lock() {
-  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
-}
 calc() {
   awk "BEGIN{ print $* }" ;
-}
-r() {
-  chmod -R 777 * 
-}
-ra() {
-  chmod -R 755 *
 }
 mkcd() {
   mkdir $1
@@ -43,6 +34,12 @@ fn() {
 f() {
   find -name "*" -print | xargs -0 -l1 -i grep -i {} "$1"
 }
+
+# Aliases
+alias showlib='chflags nohidden ~/Library'
+alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+alias r='chmod -R 777 *'
+alias ra='chmod -R 755 *'
 
 # ls aliases
 alias lal='ls -al'

@@ -61,3 +61,5 @@
         auto = 1
 [core]
         trustctime = false
+[credential]
+	helper = osxkeychain
