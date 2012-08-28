@@ -45,6 +45,9 @@
 	"sublimelinter": "load-save",
 	"sublimelinter_popup_errors_on_save": false,
 	"theme": "ProKit.sublime-theme",
+	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
+	"word_wrap": false,
+	"trim_trailing_white_space_on_save": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@%^&*|+=[]{}`~?"
 }
