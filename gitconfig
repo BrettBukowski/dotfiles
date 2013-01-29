@@ -1,69 +1,82 @@
 [user]
-        name = Brett Bukowski
-        email = brett.bukowski@gmail.com
+    name = Brett Bukowski
+    email = brett.bukowski@gmail.com
 [color]
-        ui = auto
+    ui = auto
 [color "diff"]
     meta = yellow
-        frag = cyan
-        old = red
-        new = green
+    frag = cyan
+    old = red
+    new = green
 [help]
-        autocorrect = 1
+    autocorrect = 1
 [alias]
-        last = log -1 HEAD
-        unstage = reset HEAD --
-        c = commit
-        cm = commit -m
-        cma = commit -a -m
-        ca = commit --amend
-        caa = commit -a --amend -C HEAD
-        co = checkout
-        br = branch
-        st = status
-        pulldown = pull --upload-pack /nfs/local/linux/git/current/bin/git-upload-pack
-        killbranch = branch -d
-        ls = ls-files
-        unstash = stash pop
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    c = commit
+    cm = commit -m
+    cma = commit -a -m
+    ca = commit --amend
+    caa = commit -a --amend -C HEAD
+    co = checkout
+    br = branch
+    st = status
+    pulldown = pull --upload-pack /nfs/local/linux/git/current/bin/git-upload-pack
+    killbranch = branch -d
+    ls = ls-files
+    unstash = stash pop
 
-        ; Log
-        #log log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"
-        #l = log --graph --pretty=format:'%C(yellow)%h%Creset %s %Creset %C(yellow)%d%Creset %Cgreen%an, (%cr)%Creset' --abbrev-commit$
-        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-        lol = log --graph --decorate --pretty=oneline --abbrev-commit
-        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ; Log
+    #log log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"
+    #l = log --graph --pretty=format:'%C(yellow)%h%Creset %s %Creset %C(yellow)%d%Creset %Cgreen%an, (%cr)%Creset' --abbrev-commit$
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
-        ; Undo (via https://github.com/leifwickland/dotfiles/blob/master/.gitconfig)
-        unstage=reset HEAD --
-        revertToIndex=checkout --
-        revertToHead=checkout HEAD
-        revertLastCommit=revert HEAD
+    ; Undo (via https://github.com/leifwickland/dotfiles/blob/master/.gitconfig)
+    unstage=reset HEAD --
+    revertToIndex=checkout --
+    revertToHead=checkout HEAD
+    revertLastCommit=revert HEAD
 
-        ; Diff (via https://github.com/leifwickland/dotfiles/blob/master/.gitconfig)
-        dall = diff --no-ext-diff
-        d = diff --relative --no-ext-diff
-        dv = diff --ext-diff
-        df = diff --relative --no-ext-diff --name-only
-        dfall = diff --no-ext-diff --name-only
-        ds = diff --relative --no-ext-diff --name-status
-        dsall = diff --no-ext-diff --name-status
-        di = diff-index --color=auto --cached --patch --relative HEAD
-        dfi = diff-index --color=auto --cached --name-only --relative HEAD
-        diall = diff-index --color=auto --cached --patch HEAD
-        dfiall = diff-index --color=auto --cached --name-only HEAD
-        do = diff --relative --no-ext-diff origin/master..HEAD
-        dvo = diff --ext-diff origin/master..HEAD
-        dfo = diff --relative --no-ext-diff --name-only origin/master..HEAD
-        dfallo = diff --no-ext-diff --name-only origin/master..HEAD
-        dso = diff --relative --no-ext-diff --name-status origin/master..HEAD
-        dsallo = diff --no-ext-diff --name-status origin/master..HEAD
+    ; Diff (via https://github.com/leifwickland/dotfiles/blob/master/.gitconfig)
+    dall = diff --no-ext-diff
+    d = diff --relative --no-ext-diff
+    dv = diff --ext-diff
+    df = diff --relative --no-ext-diff --name-only
+    dfall = diff --no-ext-diff --name-only
+    ds = diff --relative --no-ext-diff --name-status
+    dsall = diff --no-ext-diff --name-status
+    di = diff-index --color=auto --cached --patch --relative HEAD
+    dfi = diff-index --color=auto --cached --name-only --relative HEAD
+    diall = diff-index --color=auto --cached --patch HEAD
+    dfiall = diff-index --color=auto --cached --name-only HEAD
+    do = diff --relative --no-ext-diff origin/master..HEAD
+    dvo = diff --ext-diff origin/master..HEAD
+    dfo = diff --relative --no-ext-diff --name-only origin/master..HEAD
+    dfallo = diff --no-ext-diff --name-only origin/master..HEAD
+    dso = diff --relative --no-ext-diff --name-status origin/master..HEAD
+    dsallo = diff --no-ext-diff --name-status origin/master..HEAD
 [gc]
-        auto = 1
+    auto = 1
 [core]
-        trustctime = false
+    trustctime = false
 [credential]
 	helper = osxkeychain
 [branch]
 	autosetuprebase = always
 [push]
 	default = simple
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool]
+    prompt = false
+	keepBackup = true
+[merge]
+    tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+    prompt = false
+[diff]
+    tool = Kaleidoscope
