@@ -6,6 +6,7 @@ export LS_COLORS="no=00:fi=00:di=01;34:ln=01;31:pi=40;33:so=01;35:bd=40;33;01:cd
 
 
 # GIT
+. ~/bin/git-completion.bash
 PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
 
 # Z
@@ -40,6 +41,7 @@ alias showlib='chflags nohidden ~/Library'
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias r='chmod -R 777 *'
 alias ra='chmod -R 755 *'
+alias sudo='sudo env PATH=$PATH'
 
 # ls aliases
 alias lal='ls -al'
