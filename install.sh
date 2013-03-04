@@ -9,7 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_profile bashrc gitconfig"    # list of files/folders to symlink in homedir
+files="bash_profile bashrc gitconfig irbrc"    # list of files/folders to symlink in homedir
 binfiles="z/z.sh"
 
 ##########
