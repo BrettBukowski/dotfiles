@@ -80,3 +80,5 @@
     prompt = false
 [diff]
     tool = Kaleidoscope
+[rerere]
+	enabled = 1
