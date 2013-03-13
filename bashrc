@@ -49,6 +49,7 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 alias r='chmod -R 777 *'
 alias ra='chmod -R 755 *'
 alias sudo='sudo env PATH=$PATH'
+alias alert='~/bin/alert.sh $?'
 
 # ls aliases
 alias lal='ls -al'
