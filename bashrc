@@ -41,11 +41,28 @@ cdf() {
     echo 'No Finder window found' >&2
   fi
 }
+# Select the current directory in launchbar, optionally a file
+# via <http://brettterpstra.com/2013/03/14/more-command-line-handiness/>
+lb() {
+  if [[ $# = 1 ]]; then
+    [[ -e "$(pwd)/$1" ]] && open "x-launchbar:select?file=$(pwd)/$1" || open "x-launchbar:select?file=$1"
+  else
+    open "x-launchbar:select?file=$(pwd)"
+  fi
+}
+# batch change extension
+chgext() {
+  for file in *.$1 ; do mv $file `echo $file | sed "s/\(.*\.\)$1/\1$2/"` ; done
+}
 
-# Aliases
+# Mac aliases
+alias ql="qlmanage -p &>/dev/null"
+alias pbgist='jist -Ppo'
 alias f='open -a Finder ./'
 alias showlib='chflags nohidden ~/Library'
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# aliases
 alias r='chmod -R 777 *'
 alias ra='chmod -R 755 *'
 alias sudo='sudo env PATH=$PATH'
