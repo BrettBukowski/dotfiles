@@ -4,8 +4,8 @@ PATH=$PATH:$HOME/bin
 export LS_COLORS="no=00:fi=00:di=01;34:ln=01;31:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00"
 
 # GIT
-. ~/bin/git-completion.bash
-PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
+# . ~/bin/git-completion.bash
+# PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
 
 # Z
 . ~/bin/z.sh
@@ -61,12 +61,20 @@ alias pbgist='jist -Ppo'
 alias f='open -a Finder ./'
 alias showlib='chflags nohidden ~/Library'
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+#copy output of last command to clipboard
+alias cl="fc -e -|pbcopy"
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # aliases
 alias r='chmod -R 777 *'
 alias ra='chmod -R 755 *'
+alias ax='chmod a+x'
 alias sudo='sudo env PATH=$PATH'
 alias alert='~/bin/alert.sh $?'
+alias cpu='top -o cpu'
+alias mem='top -o rsize'
+alias ..="cd .." ...="cd ../.." ....="cd ../../.."
 
 # ls aliases
 alias lal='ls -al'
@@ -75,4 +83,5 @@ alias la='ls -a'
 alias lh='ls -a | egrep "^\."'
 alias ps="ps gauxw"
 alias ldir='ls -F|grep /'
-alias ..="cd .." ...="cd ../.." ....="cd ../../.."
+alias lt='ls -At1 && echo "------Oldest--"'
+alias ltr='ls -Art1 && echo "------Newest--"'
