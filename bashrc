@@ -30,6 +30,13 @@ fs() {
 fn() {
   grep -i "$1" --color=auto `find . -name "$2" ! -name "*.test*" ! -name "*.#*" ! -name "*.bak" ! -name "*.*~" -print`
 }
+# While git merging
+ours() {
+  git checkout --ours $@ && git add $@
+}
+theirs() {
+  git checkout --theirs $@ && git add $@
+}
 
 # cd to the path of the front Finder window
 # via <http://brettterpstra.com/2013/02/09/quick-tip-jumping-to-the-finder-location-in-terminal/>
