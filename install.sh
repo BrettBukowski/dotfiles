@@ -11,6 +11,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bash_profile bashrc gitconfig irbrc"    # list of files/folders to symlink in homedir
 binfiles="z/z.sh alert.sh"
+platform=`uname -s`
 
 ##########
 
@@ -38,3 +39,7 @@ for file in $binfiles; do
     splitter=(${file//\//})
     ln -s $dir/$file ~/bin/${splitter[1]}
 done
+
+if [[ $platform == "Darwin" ]]; then
+  ./$dir/defaults
+fi
