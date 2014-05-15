@@ -63,6 +63,7 @@
     auto = 1
 [core]
     trustctime = false
+	editor = subl -n -w
 [credential]
 	helper = osxkeychain
 [branch]
@@ -83,7 +84,7 @@
 [diff]
     tool = Kaleidoscope
 [rerere]
-	enabled = 1
+	enabled = true
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
