@@ -3,6 +3,8 @@ PATH=$PATH:$HOME/bin
 
 export LS_COLORS="no=00:fi=00:di=01;34:ln=01;31:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00"
 
+export EDITOR="subl -w"
+
 # GIT
 # . ~/bin/git-completion.bash
 # PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
@@ -30,6 +32,9 @@ fs() {
 fn() {
   grep -i "$1" --color=auto `find . -name "$2" ! -name "*.test*" ! -name "*.#*" ! -name "*.bak" ! -name "*.*~" -print`
 }
+urlenc() {
+	echo -n "$@" | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'
+}
 # While git merging
 ours() {
   git checkout --ours $@ && git add $@
@@ -38,6 +43,8 @@ theirs() {
   git checkout --theirs $@ && git add $@
 }
 
+# OS X:
+#
 # cd to the path of the front Finder window
 # via <http://brettterpstra.com/2013/02/09/quick-tip-jumping-to-the-finder-location-in-terminal/>
 cdf() {
@@ -56,6 +63,13 @@ lb() {
   else
     open "x-launchbar:select?file=$(pwd)"
   fi
+}
+# Open argument in Dash
+function dash() {
+	open "dash://$(urlenc $@)"
+}
+function dman() {
+	open "dash://man:$(urlenc $@)"
 }
 # batch change extension
 chgext() {

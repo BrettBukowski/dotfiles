@@ -1,6 +1,6 @@
 [user]
-    name = Brett Bukowski
-    email = brett.bukowski@gmail.com
+	name = Brett Bukowski
+	email = brett.bukowski@gmail.com
 [color]
     ui = auto
 [color "diff"]
@@ -20,16 +20,18 @@
     caa = commit -a --amend -C HEAD
     co = checkout
     br = branch
-    st = status
+    st = status -sb
     pulldown = pull --upload-pack /nfs/local/linux/git/current/bin/git-upload-pack
     killbranch = branch -d
     ls = ls-files
     unstash = stash pop
+    purr = pull --rebase
+    ready = rebase -i @{u}
 
     ; Log
     #log log --graph --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"
     #l = log --graph --pretty=format:'%C(yellow)%h%Creset %s %Creset %C(yellow)%d%Creset %Cgreen%an, (%cr)%Creset' --abbrev-commit$
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
@@ -82,3 +84,6 @@
     tool = Kaleidoscope
 [rerere]
 	enabled = 1
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
