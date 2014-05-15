@@ -82,6 +82,7 @@ alias alert='~/bin/alert.sh $?'
 alias cpu='top -o cpu'
 alias mem='top -o rsize'
 alias ..="cd .." ...="cd ../.." ....="cd ../../.."
+alias gt='cd $(git rev-parse --show-toplevel 2>/dev/null || (echo "."; echo "Not within a git repository" >&2))'
 
 # ls aliases
 alias lal='ls -al'
@@ -92,3 +93,5 @@ alias ps="ps gauxw"
 alias ldir='ls -F|grep /'
 alias lt='ls -At1 && echo "------Oldest--"'
 alias ltr='ls -Art1 && echo "------Newest--"'
+
+source ~/dotfiles/up.sh
