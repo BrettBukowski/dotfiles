@@ -42,6 +42,12 @@ ours() {
 theirs() {
   git checkout --theirs $@ && git add $@
 }
+list-conflicts() {
+  git ls-files -u | cut -f 2 | sort -u
+}
+force-mergetool() {
+  list-conflicts | xargs git mergetool
+}
 
 # OS X:
 #
