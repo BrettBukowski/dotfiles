@@ -62,7 +62,7 @@
 [gc]
     auto = 1
 [core]
-    trustctime = false
+	trustctime = false
 	editor = subl -n -w
 [credential]
 	helper = osxkeychain
