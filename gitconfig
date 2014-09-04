@@ -21,8 +21,7 @@
     co = checkout
     br = branch
     st = status -sb
-    pulldown = pull --upload-pack /nfs/local/linux/git/current/bin/git-upload-pack
-    killbranch = branch -d
+    killb = branch -d
     ls = ls-files
     unstash = stash pop
     purr = pull --rebase

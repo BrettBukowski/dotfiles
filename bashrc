@@ -9,9 +9,6 @@ export EDITOR="subl -w"
 # . ~/bin/git-completion.bash
 # PS1='\n\w $(__git_ps1 " (%s)")\n\h\$ '
 
-# Z
-. ~/bin/z.sh
-
 # Shell Functions
 calc() {
   awk "BEGIN{ print $* }" ;
