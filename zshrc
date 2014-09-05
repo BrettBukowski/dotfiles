@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias zshconfig="subl ~/.zshrc"
+# alias ohmyzsh="subl ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -38,18 +38,28 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-export PATH=/usr/local/opt:/Library/Frameworks/Python.framework/Versions/3.3/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.3/bin:/Users/brettb/pear/bin:/Users/brettb/bin:/opt/local/bin:/opt/local/sbin:/Users/brettb/local/node/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/deployd/bin:/Users/brettb/bin
+export PATH=/opt/local/sbin
+PATH=/opt/local/bin:$PATH
+PATH=/usr/X11/bin:$PATH
+PATH=/usr/sbin:$PATH
+PATH=/bin:$PATH
+PATH=/usr/bin:$PATH
+PATH=/usr/local/bin:$PATH
+PATH=/usr/local/sbin:$PATH
+PATH=/Users/brettbukowski/bin:$PATH
+PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
 if [ -f ~/dotfiles/bashrc ]; then
    source ~/dotfiles/bashrc
 fi
 
-if [ -f ~/.liquidpromptrc ]; then
-   source ~/.liquidpromptrc
+if [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+  chruby ruby-2.0
 fi
 
-# zsh-bd
-# . $HOME/.zsh/plugins/bd/bd.zsh
+# If you type foo, and it isn't a command, and it is a directory in your cdpath, go there
+setopt AUTO_CD
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-chruby 2.1
+unsetopt correct_all
