@@ -1,7 +1,7 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_delay": 800,
-	"color_scheme": "Packages/DobDark Color Scheme/Dobdark.tmTheme",
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Monokai.tmTheme",
 	"detect_slow_plugins": false,
 	"file_exclude_patterns":
 	[
@@ -27,7 +27,7 @@
 		"doxygen",
 		"min"
 	],
-	"font_face": "Inconsolata",
+	"font_face": "Source Code Pro",
 	"font_options":
 	[
 		"subpixel_antialias"
@@ -45,10 +45,10 @@
 	"scroll_past_end": true,
 	"sublimelinter": "load-save",
 	"sublimelinter_popup_errors_on_save": false,
-	"theme": "ProKit.sublime-theme",
 	"tab_size": 2,
+	"theme": "Boxy Monokai.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"word_wrap": false,
 	"trim_trailing_white_space_on_save": true,
-	"word_separators": "./\\()\"'-:,.;<>~!@%^&*|+=[]{}`~?"
+	"word_separators": "./\\()\"'-:,.;<>~!@%^&*|+=[]{}`~?",
+	"word_wrap": false
 }
