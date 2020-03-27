@@ -32,7 +32,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git dircycle history-substring-search last-working-dir git-extras wd gitignore z)
+plugins=(git dircycle history-substring-search last-working-dir git-extras wd gitignore z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,6 +42,7 @@ export PATH=/opt/local/sbin
 PATH=/opt/local/bin:$PATH
 PATH=/usr/X11/bin:$PATH
 PATH=/usr/sbin:$PATH
+PATH=/sbin:$PATH
 PATH=/bin:$PATH
 PATH=/usr/bin:$PATH
 PATH=/usr/local/bin:$PATH
