@@ -112,3 +112,7 @@ alias lt='ls -At1 && echo "------Oldest--"'
 alias ltr='ls -Art1 && echo "------Newest--"'
 
 source ~/dotfiles/up.sh
+
+# Initialize rbenv
+eval "$(rbenv init -)"
+
